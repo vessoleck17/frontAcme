@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="admFilmes.js" defer></script>
+    <title>CMS-filmes</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        red: '#dc2626',
+                        clifford: '#da373d',
+                    },
+                    spacing: {
+
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    </div>
+    <header class="
+        text-red
+        flex justify-center space-x-8
+        items-center 
+        flex 
+        justify-between
+        p-4">
+
+
+
+
+        <img class="h-16 
+            flex
+            z-40
+            w-42" src="./img//logo.png" alt="">
+
+        <h1 class="font-bold text-2xl">GERENCIAMENTO DE FILMES</h1>
+
+
+
+        <button class="
+            bg-red 
+            w-32 
+            h-10
+            flex
+            justify-center
+            items-center
+            text-white
+            " id="btn-cadastro"> CADASTRAR </button>
+
+    </header>
+
+
+
+
+    <main class="mt-6">
+        <table class="w-full divide-y divide-gray-200 ">
+            <thead class="bg-gray-200">
+                <tr class="bg-red text-white">
+                    <th class="px-6 py-3  text-left text-xs font-medium text-grady-500 uppercase tracking-wider">ID</th>
+                    <th class="px-6 py-3  text-left text-xs font-medium text-grady-500 uppercase tracking-wider">FOTO</th>
+                    <th class="px-6 py-3  text-left text-xs font-medium text-grady-500 uppercase tracking-wider">TÍTULO</th>
+                    <th class="px-6 py-3  text-left text-xs font-medium text-grady-500 uppercase tracking-wider">SINOPSE</th>
+                    <th class="px-6 py-3  text-left text-xs font-medium text-grady-500 uppercase tracking-wider">DURAÇÃO</th>
+                    <th class="px-6 py-3  text-left text-xs font-medium text-grady-500 uppercase tracking-wider">LANÇAMENTO</th>
+                    <th class="px-6 py-3  text-left text-xs font-medium text-grady-500 uppercase tracking-wider">RELANÇAMENTO</th>
+                    <th class="px-6 py-3  text-left text-xs font-medium text-grady-500 uppercase tracking-wider">CLASSIFICAÇÃO</th>
+                    <th class="px-6 py-3  text-left text-xs font-medium text-grady-500 uppercase tracking-wider">VALOR</th>
+                    <th class="px-6 py-3  text-left text-xs font-medium text-grady-500 uppercase tracking-wider">AÇÃO</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y  divide-gray-200" id="tbody">
+                <tr>
+                    
+                </tr>
+            </tbody>
+        </table>
+            
+
+        <div class="modal" id="modal">
+            <div class="
+            flex
+            flex-col
+            gap-y-5
+            w-42
+            m-40
+            pb-5
+            bg-white
+            shadow-xl
+            ">
+                <header class="
+                relative
+                flex
+                justify-center
+                h-10
+                leading-10
+                text-base
+                ">
+                    <h2>Novo Filme</h2>
+                    <span class="
+                    absolute
+                    right-0
+                    block
+                    h-10
+                    w-10
+                    text-center
+                    select-none
+                    cursor-pointer
+
+                   
+                    " id="modalClose">&#10006;</span>
+                </header>
+                <form id="form" class="
+                flex
+                justify-between
+                flex-wrap
+                gap-y-5
+                py-0
+                px-5
+
+                ">
+                    <input type="text"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="filmeTitulo" placeholder="Titulo do filme" >
+                    <input type="text"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="filmeCapa" placeholder="Url capa do filme" required>
+                    <input type="text"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="filmeSinopse" placeholder="Sinopse" required>
+                    <input type="date"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="filmeLancamento" placeholder="Data de lançamento" required>
+                    <input type="date"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="filmeRelancamento" placeholder="Data de relançamento">
+                    <input type="time"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="filmeDuracao" placeholder="Duração do filme (hh:mm:ss)" required>
+                    <input type="number"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="filmeValor" placeholder="Valor do filme" required>
+                    <div class="flex items-center gap-2">
+                        <p class="text-white text-3xl">Classificação:</p>
+                        <select name="" class="p-3 outline-none rounded-[15px]  bg-white text-black text-2xl"
+                            id="filmeClassificacao">
+                            <option value="1">Livre</option>
+                            <option value="2">10</option>
+                            <option value="3">12</option>
+                            <option value="4">14</option>
+                            <option value="5">16</option>
+                            <option value="6">18</option>
+                        </select>
+                    </div>
+                </form>
+                <footer class="
+                bg-inherit
+                text-center
+                py-0
+                px-5
+                ">
+                    <button class="bg-red font-semibold h-8 px-24 justify-center " id="btn-salvar">Salvar</button>
+                </footer>
+            </div>
+
+        </div>
+
+        <div class="modal" id="modal-put">
+
+            <div class="
+            flex
+            flex-col
+            gap-y-5
+            w-42
+            m-40
+            pb-5
+            bg-white
+            shadow-xl
+            ">
+                <header class="
+                relative
+                flex
+                justify-center
+                h-10
+                leading-10
+                text-base
+                ">
+                    <h2>Atualizar Filme</h2>
+                    <span class="
+                    absolute
+                    right-0
+                    block
+                    h-10
+                    w-10
+                    text-center
+                    select-none
+                    cursor-pointer
+
+                   
+                    " id="modalClose2">&#10006;</span>
+                </header>
+                <form id="form" class="
+                flex
+                justify-between
+                flex-wrap
+                gap-y-5
+                py-0
+                px-5
+
+                ">
+                    <input type="text"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="updateTitulo" placeholder="Titulo do filme" required>
+                    <input type="text"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="updateCapa" placeholder="Url capa do filme" required>
+                    <input type="text"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="updateSinopse" placeholder="Sinopse" required>
+                    <input type="date"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="updateLancamento" placeholder="Data de lançamento" required>
+                    <input type="date"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="updateRelancamento" placeholder="Data de relançamento">
+                    <input type="time"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="updateDuracao" placeholder="Duração do filme (hh:mm:ss)" required>
+                    <input type="number"
+                        class="w-[calc(50%-10px)] h-10 outline-none border-none shadow-[0_0_2px_black] px-2.5 text-base focus:border-2 focus:border-primary focus:shadow-[0_0_3px_var(bg-yellow-400)]"
+                        id="updateValor" placeholder="Valor do filme" required>
+                    <div class="flex items-center gap-2">
+                        <p class="text-white text-3xl">Classificação:</p>
+                        <select name="" class="p-3 outline-none rounded-[15px]  bg-white text-black text-2xl"
+                            id="updateClassificacao">
+                            <option value="1">Livre</option>
+                            <option value="2">10</option>
+                            <option value="3">12</option>
+                            <option value="4">14</option>
+                            <option value="5">16</option>
+                            <option value="6">18</option>
+                        </select>
+                    </div>
+                </form>
+                <footer class="
+                bg-inherit
+                text-center
+                py-0
+                px-5
+                ">
+                    <button class="bg-red font-semibold h-8 px-24 justify-center " id="btn-salvar-alteracao">Salvar
+                        Alterações</button>
+                </footer>
+            </div>
+
+
+
+        </div>
+
+    </main>
+</body>
+
+</html>

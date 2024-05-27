@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../js/infoFilme.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Informações do Filme</title>
+</head>
+<body class="h-full bg-gray-100 p-6">
+    <header class="flex gap-8 items-center">
+        <a href="./home.html">
+            <img class="h-12 w-18" src="../img/seta.png" alt="">
+        </a>
+        <h1 id="titulo" class="text-5xl text-red-600"></h1>
+    </header>
+
+    <main class="h-full w-full justify-center pt-32 flex space-x-32">
+        
+        <div class="h-5/6 flex items-center flex-col">
+            <div class="h-fit w-fit">
+                <img id="capa" class="w-80"> 
+            </div>
+            <button class="bg-red-600 flex items-center px-10 py-2 text-2xl md:text-3xl gap-3 mt-7">
+                <i class='bx bx-play-circle font-bold text-white'></i>
+                <p class="font-bold text-white">ASSISTIR</p>
+            </button>
+            <p id="valor" class="text-2xl text-red-600 mt-4"></p>
+        </div>
+        <div class="w-1/2 flex flex-col gap-6"> 
+            <h1 class="text-black font-bold text-3xl md:text-4xl">SINOPSE</h1>
+            <div class="h-2 bg-red-600"></div>
+            <p class="text-black text-2xl md:text-3xl" id="sinopse"></p> 
+            <p class="text-black font-bold text-2xl md:text-3xl" id="duracao"></p>
+            <p class="text-black font-bold text-2xl md:text-3xl" id="lancamento"></p>
+        </div>
+    </main>
+</body>
+</html>
